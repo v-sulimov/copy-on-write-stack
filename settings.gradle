@@ -1,0 +1,2 @@
+rootProject.name = 'kotlin-copy-on-write-stack'
+include('stack')
