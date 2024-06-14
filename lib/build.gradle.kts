@@ -4,7 +4,13 @@ plugins {
 
     // Apply the java-library plugin for API and implementation separation.
     `java-library`
+
+    // Apply the maven-publish plugin to publish to the Maven repository.
+    `maven-publish`
 }
+
+group = "com.vsulimov"
+version = "1.0.0"
 
 repositories {
     // Use Maven Central for resolving dependencies.
@@ -22,9 +28,33 @@ dependencies {
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
+// Also, add javadoc and sources to the maven publication.
 java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(21)
+    }
+    withJavadocJar()
+    withSourcesJar()
+}
+
+// Configure Maven Publication.
+publishing {
+    publications {
+        create<MavenPublication>("publication") {
+            artifactId = "copy-on-write-stack"
+            from(components["java"])
+            pom {
+                name = "Copy-on-write stack"
+                description = "The Copy-on-write stack represents a last-in-first-out (LIFO) stack of objects."
+                url = "https://github.com/v-sulimov/copy-on-write-stack"
+                licenses {
+                    license {
+                        name = "The Apache License, Version 2.0"
+                        url = "http://www.apache.org/licenses/LICENSE-2.0.txt"
+                    }
+                }
+            }
+        }
     }
 }
 
