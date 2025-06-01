@@ -9,4 +9,4 @@ plugins {
 }
 
 rootProject.name = "copy-on-write-stack"
-include("lib")
+include("stack")
