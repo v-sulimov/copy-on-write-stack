@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.3] - 27/08/2025
+
+### Changed
+- Updated foojay-resolver-convention to version 1.0.0
+
 ## [1.0.2] - 05/08/2025
 
 ### Changed

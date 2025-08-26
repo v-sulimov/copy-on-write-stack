@@ -39,7 +39,7 @@ publishing {
         create<MavenPublication>("stack") {
             groupId = "com.vsulimov"
             artifactId = "stack"
-            version = "1.0.2"
+            version = "1.0.3"
 
             from(components["java"])
 
